@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tickethack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Work+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="header">
+    <h1><a id="title" href="index.html">Tickethack</a></h1>
+    <div>
+      <a class="link" href="cart.html">Cart</a> <a class="link" href="bookings.html">Bookings</a>
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="description">
+      <h2>Explore the world effortlessly by train!</h2>
+      <h3>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
+    </div>
+
+    <div id="card-container">
+      <div id="card">
+        <input class="input" id="departure" type="text" placeholder="Departure" />
+        <div class="divider"></div>
+        <input class="input" id="arrival" type="text" placeholder="Arrival" />
+        <input class="input" id="date" type="date" placeholder="Date" />
+        <button id="search">Search</button>
+      </div>
+
+      <div id="results">
+        <img id="results-logo" src="images/train.png" />
+        <div class="divider green"></div>
+        <span>It's time to book your future trip.</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.3/moment.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
