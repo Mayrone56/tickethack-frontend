@@ -11,8 +11,10 @@
 //document.querySelector('#results').innerHTML += tripsFind;
 
 //BT search vide #results
-document.querySelector('#search').addEventListener('click',
-function () {
+document.querySelector('#search').addEventListener('click', function () {
+  const dearture = document.querySelector('#departure').value;
+  const arrival = document.querySelector('#arrival').value;
+  const date = document.querySelector('#date').value;
     document.querySelector('#results').innerHTML ="";
     console.log("Click detected")
   }
@@ -30,7 +32,7 @@ const rightCardError = function() {
 rightCardError();
 
 //Card left find departure arrival date
-fetch('http://localhost:3000/trips/findTrips/:departure/:arrival')
+fetch('http://localhost:3000/trips/findTrips/${departure}/${arrival}/${date}')
   .then(response => response.json())
   .then(trips => {
     document.querySelector('#departure').textContent = trips.dearture;
