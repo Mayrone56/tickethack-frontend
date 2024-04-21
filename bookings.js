@@ -1,25 +1,50 @@
-// Get bookings
-fetch('http://localhost:3000/bookings')
-  .then(response => response.json())
-  .then(data => {
-    if (data.result) {
-      document.querySelector('#trips').innerHTML = '<h4>My bookings</h4>';
+function fillBooking() {
+  fetch('http://localhost:3000/bookings')
+    .then(response => response.json())
+    .then(bookings => {
+      if (bookings.length === 0) {
+        document.querySelector('#bookings').innerHTML = `
+          <p>No booking yet.</p>
+          <p>Why not plan a trip?</p>
+        `;
+      } else {
+        //Vidage du tableau
+        emptyBookings();
 
-      for (const { trip } of data.bookings) {
-        document.querySelector('#trips').innerHTML += `
-					<div class="booked-trip">
-						<span>${trip.departure} > ${trip.arrival}</span>
-						<span>${moment(trip.date).format('HH:mm')}</span>
-						<span>${trip.price}€</span>
-						<span class="departure">Departure ${moment(trip.date).fromNow()}</span>
-					</div>
-				`;
+           document.querySelector('#bookings').innerHTML += `
+            <div id="booking-list">  
+              <h2>My bookings</h2>
+            </div>
+            `;
+        for (const booking of bookings.bookingArray) {
+          const trip = booking.trip;
+
+          const duration = moment.duration(moment(trip.date).diff(moment()));
+          if (duration.asDays() < 0) {
+            const timeTrip = moment(trip.date).format("HH:mm");
+            document.querySelector('#booking-list').innerHTML += `
+            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue was ${-Math.floor(duration.asHours())} hours ago</div>
+            `;
+          }
+          else if (duration.asDays() > 1) {
+            const timeTrip = moment(trip.date).format("DD/MM HH:mm");
+            document.querySelector('#booking-list').innerHTML += `
+            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue in ${Math.floor(duration.asDays())} days</div>
+            `;
+          } else {
+            
+            const timeTrip = moment(trip.date).format("HH:mm");
+            document.querySelector('#booking-list').innerHTML += `
+            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue in ${Math.floor(duration.asHours())} hours</div>
+            `;
+          }
+        }
       }
+    });
+}
+fillBooking();
 
-      document.querySelector('#trips2').style.display = 'flex';
-      document.querySelector('#trips2').innerHTML += `
-				<div id="divider"></div>
-				<h5>Enjoy your travels with Tickethack!</h5>
-			`;
-    }
-  });
+//Vidage tableau
+function emptyBookings() {
+  document.querySelector('#bookings').innerHTML = "";
+}

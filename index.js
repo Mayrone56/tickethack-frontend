@@ -1,14 +1,5 @@
-//Strcutre trips find
-//  let tripsFind = `
-// <div class="trip-design">
-//   <span>${trip.departure} > ${trip.arrival}${time.getHours()}:${time.getMinutes()}${trip.price}€</span>
-//   <button id="bt-book">Book</button>
-// </div>
-// `;
-
-//const { response } = require("../tickethack-backend/app");
-
-//document.querySelector('#results').innerHTML += tripsFind;
+// //Set date default 
+document.querySelector('#date').value = moment().format("YYYY-MM-DD");
 
 //BT search vide #results
 document.querySelector('#search').addEventListener('click', () => {
@@ -63,6 +54,7 @@ function rightCardFill(trips) {
   addEventListenerButtons();
 }
 
+//Click book
 function addEventListenerButtons() {
   const buttonsBook = document.querySelectorAll('.bt-book');
   for (const button of buttonsBook) {
@@ -88,25 +80,3 @@ function addEventListenerButtons() {
 
 
 
-//Set date default 
-// const time = new Date(trip.date);
-// document.querySelector('#date').value = time;
-
-
-//Show trip in the right card
-
-// document.querySelector('#search').addEventListener('click', () => {
-//   fetch('http://localhost:3000/trips/findTrips/Paris/Lyon/2024-04-16T00:00:00Z')
-//   .then(response => response.json())
-//   .then(trips => {
-//     document.querySelector('#results').innerHTML ="";
-//     for (const trip of trips) {
-//       //const time = new Date(trip.date);
-//       document.querySelector('#results').innerHTML +=`
-//         <span>${trip.departure} > ${trip.arrival}   ${time.getHours()}:${time.getMinutes()}    ${trip.price}€</span>
-//       `;      
-//     }
-//   })
-// })
-
-//
