@@ -1,5 +1,5 @@
 function fillCart() {
-  fetch('https://tickethack-backend-iota-blue.vercel.app//carts')
+  fetch('https://tickethack-backend-iota-blue.vercel.app/carts')
     .then(response => response.json())
     .then(carts => {
       if (carts.length === 0) {
@@ -43,7 +43,7 @@ function btDelete() {
     button.addEventListener('click', () => {
       console.log("Button id", button.id)
       //On retrouve dans la route le parametre button.id declaré dans le bloc de code au dessus
-      fetch(`https://tickethack-backend-iota-blue.vercel.app//carts/deleteCart/${button.id}`, {
+      fetch(`https://tickethack-backend-iota-blue.vercel.app/carts/deleteCart/${button.id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
       })
@@ -57,7 +57,7 @@ function btDelete() {
 //Detection du clic sur bt purchase
 document.querySelector('#purchase').addEventListener('click', () => { 
   console.log("click purchase");
-  fetch(`https://tickethack-backend-iota-blue.vercel.app//bookings/newBooking`, {
+  fetch(`https://tickethack-backend-iota-blue.vercel.app/bookings/newBooking`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' }
   })

@@ -1,5 +1,5 @@
 function fillBooking() {
-  fetch('https://tickethack-backend-iota-blue.vercel.app//bookings')
+  fetch('https://tickethack-backend-iota-blue.vercel.app/bookings')
     .then(response => response.json())
     .then(bookings => {
       if (bookings.length === 0) {
