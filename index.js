@@ -9,7 +9,7 @@ document.querySelector('#search').addEventListener('click', () => {
   const date = document.querySelector('#date').value;
 
   //Card left find departure arrival date
-  fetch(`http://localhost:3000/trips/findTrips/${departure}/${arrival}/${date}`)
+  fetch(`https://tickethack-backend-iota-blue.vercel.app//trips/findTrips/${departure}/${arrival}/${date}`)
     .then(response => response.json())
     .then(trips => {
       document.querySelector('#results').innerHTML = "";
@@ -61,7 +61,7 @@ function addEventListenerButtons() {
     button.addEventListener('click', () => {
       console.log("Button id", button.id)
       //On retrouve dans la route le parametre button.id declaré dans le bloc de code au dessus
-      fetch(`http://localhost:3000/carts/newCart/${button.id}`, {
+      fetch(`https://tickethack-backend-iota-blue.vercel.app//carts/newCart/${button.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       })
