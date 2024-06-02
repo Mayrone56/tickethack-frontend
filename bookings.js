@@ -1,5 +1,8 @@
+// const BACKEND_URL = "https://tickethack-backend-iota-blue.vercel.app";
+const BACKEND_URL = "http://localhost:3000";
+
 function fillBooking() {
-  fetch('https://tickethack-backend-3kfhrf7fh-mayrones-projects.vercel.app/bookings')
+  fetch(`${BACKEND_URL}/bookings`)
     .then(response => response.json())
     .then(bookings => {
       if (bookings.length === 0) {

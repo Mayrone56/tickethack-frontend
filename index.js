@@ -1,3 +1,5 @@
+// const BACKEND_URL = "https://tickethack-backend-iota-blue.vercel.app";
+const BACKEND_URL = "http://localhost:3000";
 // //Set date default 
 document.querySelector('#date').value = moment().format("YYYY-MM-DD");
 
@@ -8,8 +10,9 @@ document.querySelector('#search').addEventListener('click', () => {
   const arrival = document.querySelector('#arrival').value;
   const date = document.querySelector('#date').value;
 
+
   //Card left find departure arrival date
-  fetch(`https://tickethack-backend-iota-blue.vercel.app/trips/findTrips/${departure}/${arrival}/${date}`)
+  fetch(`${BACKEND_URL}/trips/findTrips/${departure}/${arrival}/${date}`)
     .then(response => response.json())
     .then(trips => {
       document.querySelector('#results').innerHTML = "";
@@ -61,7 +64,7 @@ function addEventListenerButtons() {
     button.addEventListener('click', () => {
       console.log("Button id", button.id)
       //On retrouve dans la route le parametre button.id declaré dans le bloc de code au dessus
-      fetch(`https://tickethack-backend-iota-blue.vercel.app/carts/newCart/${button.id}`, {
+      fetch(`${BACKEND_URL}/carts/newCart/${button.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       })
