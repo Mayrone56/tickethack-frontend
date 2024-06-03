@@ -90,13 +90,12 @@ span {
 #results {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items:center;
   background-color: white;
   height: 360px;
   width: 320px;
-  padding: 10px;
-  padding-top: 10px;
+  padding: 10px 10px;
   border-radius: 10px;
   overflow-y: scroll;
 }
@@ -110,6 +109,17 @@ span {
   height: 40px;
   border: none;
   background-color: #50A990;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#search:hover {
+  width: 88%;
+  height: 40px;
+  border: none;
+  background-color: #43917b;
   border-radius: 4px;
   color: white;
   font-size: 16px;
@@ -151,11 +161,16 @@ span {
 }
 
 .green {
-  background-color: #50A990;
-  height: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #50A990; */
+  border-bottom: 2px solid #50A990 ;
+  /* height: 2px; */
   width: 75%;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  height: 100px;
+  background-color: inherit;
+  padding: 8px 0;
 }
 
 .trip {
@@ -195,4 +210,23 @@ span {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, .5);
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.bt-book {
+  background-color: #50A990;
+  width: 50px;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.bt-book:hover {
+  cursor: pointer;
+  background-color: #43917b;
+  width: 50px;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  border: none;
 }
