@@ -155,7 +155,7 @@ h5 {
     color: black;
     background-color: white;
     max-height: 400px;
-    overflow: scroll;
+    overflow: auto;
     padding: 20px;
     border-radius: 10px 10px 0px 0px;
     gap: 16px;
