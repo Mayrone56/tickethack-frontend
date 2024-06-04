@@ -1,5 +1,5 @@
-// const BACKEND_URL = "https://tickethack-backend-iota-blue.vercel.app";
-const BACKEND_URL = "http://localhost:3000";
+//const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://tickethack-backend-nine-flame.vercel.app";
 // //Set date default
 document.querySelector("#date").value = moment().format("YYYY-MM-DD");
 

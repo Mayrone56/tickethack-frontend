@@ -1,5 +1,5 @@
-// const BACKEND_URL = "https://tickethack-backend-iota-blue.vercel.app";
-const BACKEND_URL = "http://localhost:3000";
+//const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://tickethack-backend-nine-flame.vercel.app";
 
 function fillBooking() {
   fetch(`${BACKEND_URL}/bookings`)
