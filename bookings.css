@@ -30,9 +30,9 @@ h1 {
 }
 
 h2 {
-  font-size: 36px;
-  margin-top: 5vh;
-  margin-bottom: 20px;
+  font-size: 26px;
+  margin: 32px 0;
+  color: #50A990;
 }
 
 h3 {
@@ -68,7 +68,10 @@ h5 {
   font-weight: 600;
   color: #192325;
   margin-left: 30px;
-  cursor: pointer;
+}
+
+.link:hover {
+  color: #43917b;
 }
 
 #description {
@@ -121,14 +124,46 @@ h5 {
   font-weight: 600;
 }
 
-#divider {
+.divider {
+  background-color: #ababab;
   height: 1px;
-  width: 20%;
-  background-color: #001748;
-  margin: 20px;
+  width: 88%;
   z-index: 1;
 }
 
+.green {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #50A990; */
+  /* border-bottom: 2px solid #50A990; */
+  /* height: 2px; */
+  /* width: 100%; */
+  height: auto;
+  width: 90%;
+  background-color: #e2e2e2;
+  /* margin: 8px; */
+  border-radius: 5px;
+  padding: 16px 0;
+}
+
 #booking-list {
-  color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    background-color: white;
+    max-height: 400px;
+    overflow: scroll;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+    gap: 16px;
+}
+
+#bookings {
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  width: 80vw;
 }

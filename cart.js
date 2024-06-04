@@ -14,15 +14,34 @@ function fillCart() {
       } else {
         //Vidage du tableau
         emptyCarts();
+        document.querySelector('#cart').innerHTML += `
+ 
+          <h2>My cart</h2>
+
+        `;
         let priceTrip = 0;
         for (const cart of carts) {
           const trip = cart.trip;
           priceTrip = priceTrip + trip.price;
           const timeTrip = moment(trip.date).format("HH:mm");
           document.querySelector('#cart').innerHTML += `
-                 <div class="divider green">
-                 <span>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ <button class='bt-delete' id='${cart._id}'>X</button></span>
-                 </div>
+            <div class="divider green">
+              <div class="tripLine">
+                <span ">
+                  ${trip.departure} >
+                </span>
+                <span>
+                  ${trip.arrival}
+                </span>
+                <span>
+                  ${timeTrip}
+                </span>
+                <span>
+                  ${trip.price}€               
+                </span>
+                </div>
+                <button class='bt-delete' id='${cart._id}'>X</button>
+            </div>
                  `;
         }
         btDelete();

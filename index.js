@@ -29,9 +29,11 @@ document.querySelector("#search").addEventListener("click", () => {
 //Fonction right card error
 const rightCardError = function () {
   document.querySelector("#results").innerHTML = `
-    <img id="results-logo" src="images/notfound.png" />
-    <div class="divider green"></div>
-    <span>No trip found.</span>
+    <div class="contentImageCardRight">
+      <img id="results-logo" src="images/notfound.png" />
+      <div class="divider green"></div>
+      <span>No trip found.</span>
+    </div>
   `;
 };
 //rightCardError();
@@ -48,7 +50,7 @@ function rightCardFill(trips) {
     //<button class='bt-book' id='${trip._id}'>Book</button> ici on lui met dans button id ce dernier etat l'attribut html, on peut le voir dans le html directement dans id=
     document.querySelector("#results").innerHTML += `
     <div class="divider green">
-      <span>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ <button class='bt-book' id='${trip._id}'>Book</button></span>
+      <span class="lineTrip">${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ <button class='bt-book' id='${trip._id}'>Book</button></span>
     </div>
     `;
   }

@@ -26,7 +26,9 @@ function fillBooking() {
           if (duration.asDays() < 0) {
             const timeTrip = moment(trip.date).format("HH:mm");
             document.querySelector('#booking-list').innerHTML += `
-            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue was ${-Math.floor(duration.asHours())} hours ago</div>
+            <div class="divider green">
+              <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue was ${-Math.floor(duration.asHours())} hours ago</div>
+            </div>
             `;
           }
           else if (duration.asDays() > 1) {
