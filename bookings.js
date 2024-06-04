@@ -27,20 +27,20 @@ function fillBooking() {
             const timeTrip = moment(trip.date).format("HH:mm");
             document.querySelector('#booking-list').innerHTML += `
             <div class="divider green">
-              <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue was ${-Math.floor(duration.asHours())} hours ago</div>
+              <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departure was ${-Math.floor(duration.asHours())} hours ago</div>
             </div>
             `;
           }
           else if (duration.asDays() > 1) {
             const timeTrip = moment(trip.date).format("DD/MM HH:mm");
             document.querySelector('#booking-list').innerHTML += `
-            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue in ${Math.floor(duration.asDays())} days</div>
+            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departure in ${Math.floor(duration.asDays())} days</div>
             `;
           } else {
             
             const timeTrip = moment(trip.date).format("HH:mm");
             document.querySelector('#booking-list').innerHTML += `
-            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departue in ${Math.floor(duration.asHours())} hours</div>
+            <div>${trip.departure} > ${trip.arrival} ${timeTrip} ${trip.price}€ Departure in ${Math.floor(duration.asHours())} hours</div>
             `;
           }
         }

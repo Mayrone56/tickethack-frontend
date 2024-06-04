@@ -258,11 +258,12 @@ span {
 .helpCard {
   display: flex;
   align-items: center;
- background-color: white;
+ background-color: #F2F4F4;
  color: #192325;
  border-radius: 10px;
  width: auto;
  padding: 16px;
  font-size: 14px;
  font-style: italic;
+ margin-top: 32px;
 }
